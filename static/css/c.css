@@ -1,0 +1,264 @@
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+
+}
+.hidden{
+    list-style: none;
+    font-size: 18px;
+}
+.menlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 120px;
+    position: relative;
+    margin-left: -115px;
+    background-color: rgba(171, 192, 201, 0.975);
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+
+}
+.womenlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 150px;
+    background-color:rgba(171, 192, 201, 0.975) ;
+    margin-left: 35px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+    
+}
+.kidlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 120px;
+    background-color: rgba(171, 192, 201, 0.975);
+    margin-left: 260px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+            
+}
+.homelist{
+    border: 0px solid black;
+    width: 200px;
+    height: 160px;
+    background-color:rgba(171, 192, 201, 0.975) ;
+    margin-left: 370px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+            
+}
+.skinlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 110px;
+    background-color:rgba(171, 192, 201, 0.975) ;
+    margin-left: 580px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+          
+}
+.eleclist{
+    border: 0px solid black;
+    width: 200px;
+    height: 80px;
+    background-color:rgba(171, 192, 201, 0.975) ;
+    margin-left: 750px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+          
+}
+#search{
+    border-bottom: 0px solid black;
+  }
+#container{
+  border: 0px solid black;
+  height: 350px;
+  width: 1200px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 150px;
+  background-color:whitesmoke;
+    
+    
+}
+.img-fluid{
+width: 500px;
+height: 340px;
+margin-bottom:1px ;
+}
+.col-md-6{
+font-size: 45px;
+font-weight: bolder;
+}
+.icon-with-text{
+  font-weight: lighter;
+  font-size: 15px;
+  display: inline-block;
+    
+}
+#ic{
+  width: 50px;
+  height: 50px;
+}
+#hr1{
+  margin-top: 450px;
+  width: 300px;
+  margin-left: 150px;
+  display: inline-block;
+}
+
+#span{
+  
+  font-size: 35px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  
+    
+}
+
+.maindiv{
+  border: 0px solid black;
+  height: 500px;
+  width: 1200px;
+  background-color:whitesmoke;
+  margin-top: -350px;
+  margin-left: 150px;
+  position: absolute;
+    
+}
+.div{
+  display:inline-block;
+}
+#women1 {
+border: 0px solid black;
+width: 410px;
+height: 380px;
+margin: 20px ;
+margin-left: 10px;
+position: relative;
+border-radius: 15px;
+margin-bottom: 5px;
+background-color:rgb(195, 195, 195);
+box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+#women1 img {
+  width: 800px;
+  height: 130px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+#men1 {
+  border: 0px solid black;
+  width: 350px;
+  height: 320px;
+  margin: 20px ;
+  position: relative;
+  border-radius: 15px;
+  margin-top: -370px;
+  margin-left: 430px;
+  background-color:rgb(195, 195, 195);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+#men1 img {
+  width: 130px;
+  height:  100px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+#kid1 {
+  border: 0px solid black;
+  width: 350px;
+  height: 320px;
+  margin: 20px ;
+  position: relative;
+  border-radius: 15px;
+  margin-top: -370px;
+  margin-left: 805px;
+  background-color:rgb(195, 195, 195);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+#kid1 img {
+width: 130px;
+height:  100px;
+border-radius: 10px;
+margin-top: 15px;
+}
+.proflist{
+    border: 0px solid black;
+    width: 200px;
+    height: 80px;
+    background-color:rgba(171, 192, 201, 0.975) ;
+    margin-left: 930px;
+    position: relative;
+    margin-top: -1030px;
+    box-shadow: 4px 4px 2px 4px rgba(171, 192, 201, 0.975);
+    border-radius: 1.5px;
+    
+}
+.proflist ul li:hover{
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+#shop{
+  width: 100px;
+  height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

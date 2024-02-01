@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>showcart</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/showcart.css' %}">
+
+</head>
+<body>
+    <div class="main">
+        {% for c in carts %}
+            <div class="cart">
+                <img src="{{c.product.image.url}}" alt="">
+                <h3>{{c.product.price}}</h3>
+                <form method="post" action="" id="form">
+                    {% csrf_token %}
+                    <button type="submit" onclick="adjustQuantity('{{ c.id }}','increase_quantity')">+</button>&nbsp;
+                    Quantity &nbsp;{{c.quantity}} &nbsp;
+                    <button type="submit" onclick="adjustQuantityDecrease('{{c.id}}' ,'decrease_quantity')">-</button>
+            
+                </form>
+                <br>
+                <a href="{% url 'remove_from_cart' c.id %}">Remove from Cart</a>  
+                
+            </div> 
+            
+            
+          
+        {% endfor %} 
+        
+
+
+        
+        
+
+        
+    </div>    
+    <div class="total">
+        <h2>Price Details:</h2>
+        <hr>
+        <h3>Shipping amount:{{sa}}</h3>
+        <h3>Total amount:{{total}} </h3>
+        <br><br>
+        <center> <a href="{% url 'continuee' %}" id="con">Continue</a></center>
+        
+    </div>
+    
+    <!-- showcart.html -->
+
+    
+
+
+
+<!-- Inside the <script> tag in your HTML template -->
+    <script>
+        if (typeof jQuery == 'undefined') {
+            console.error('jQuery is not loaded.');
+        } else 
+        function adjustQuantity(cartItemId, action) {
+            $.ajax({
+                type: 'POST',
+                url: `{% url 'increase_quantity' 0 %}`.replace('0', cartItemId),
+                data: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+                success: function (response) {
+                    if (response.success) {
+                        console.log('Quantity increased successfully!');
+                        // Perform any additional actions if needed
+                        // For example, you can update the displayed quantity on the page
+                    } else {
+                        console.error('Failed to increase quantity.');
+                    }
+                },
+                error: function () {
+                    console.error('AJAX request failed.');
+                }
+            });
+        }
+    
+        // Similar function for decrease_quantity if needed
+                function adjustQuantityDecrease(cartItemId, action) {
+                    $.ajax({
+                        type: 'POST',
+                        url: `{% url 'decrease_quantity' 0 %}`.replace('0', cartItemId),
+                        data: {
+                            'csrfmiddlewaretoken': '{{ csrf_token }}',
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                console.log('Quantity adjusted successfully!');
+                                // Perform any additional actions if needed
+                                // For example, you can update the displayed quantity on the page
+                            } else {
+                                console.error('Failed to adjust quantity.');
+                            }
+                        },
+                        error: function () {
+                            console.error('AJAX request failed.');
+                        }
+                    });
+                }
+            
+            
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

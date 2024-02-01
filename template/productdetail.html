@@ -1,0 +1,21 @@
+<!-- store/templates/store/product_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }} - Product Details</title>
+    <style>
+        img{
+            width: 400px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{product.image.url}}" alt="">
+    <h1>{{ product.name }}</h1>
+    <p>Price: ${{ product.price }}</p>
+            
+<span> <a href="{% url 'buynow' id=product.id %}" id="a">Buy Now</a></span>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .cart{
+            border: 0px solid black;
+            background-color: antiquewhite;
+            border-radius: 15px;
+            box-shadow: black 1px 1px 2px 1px;
+            width: 300px;
+            height: 290px;
+            padding: 30px;
+            margin: 15px;
+            
+        }
+        .cart img{
+            width: 200px;
+            height: 200px;
+            
+        }
+        
+        
+        
+        .total{
+            position: fixed;
+            border: 0px solid black;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: black 2px 2px 4px 2px;
+            height: 150px;
+            width: 300px;
+            left: 800px;
+            top: 100px;
+            font-size: 15px;
+        }
+        #form{
+            display: flex;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #con{
+            height: 50px;
+            width: 200px;
+            border-radius: 5px;
+            background-color: antiquewhite;
+            box-shadow: black 1px 1px 2px 1px;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        {% for c in orders %}
+            <div class="cart">
+                <img src="{{c.product.image.url}}" alt="">
+                <h3>{{c.product.price}}</h3>
+                <form method="post" action="" id="form">
+                    {% csrf_token %}
+                    <button type="submit" onclick="adjustQuantity('{{ c.id }}','increase_quantity')">+</button>&nbsp;
+                    Quantity &nbsp;{{c.quantity}} &nbsp;
+                    <button type="submit" onclick="adjustQuantityDecrease('{{c.id}}' ,'decrease_quantity')">-</button>
+            
+                </form>
+                <br>
+            
+                <a href="{% url 'remove_from_order' c.id %}">Remove</a>  
+                
+            </div> 
+            
+            
+          
+        {% endfor %} 
+    </div>    
+    <div class="total">
+        <h2>Price Details:</h2>
+        <hr>
+        <h3>Shipping amount:{{sa}}</h3>
+        <h3>Total amount:{{total}} </h3>
+        <br><br>
+        <center><button id="con" ><a href="{% url 'detail' %}">Continue</a></button></center>
+        
+    </div>
+    
+    
+
+    
+
+
+
+<!-- Inside the <script> tag in your HTML template -->
+    <script>
+        if (typeof jQuery == 'undefined') {
+            console.error('jQuery is not loaded.');
+        } else 
+        function adjustQuantity(orderItemId, action) {
+            $.ajax({
+                type: 'POST',
+                url: `{% url 'increases_quantity' 0 %}`.replace('0', orderItemId),
+                data: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+                success: function (response) {
+                    if (response.success) {
+                        console.log('Quantity increased successfully!');
+                        // Perform any additional actions if needed
+                        // For example, you can update the displayed quantity on the page
+                    } else {
+                        console.error('Failed to increase quantity.');
+                    }
+                },
+                error: function () {
+                    console.error('AJAX request failed.');
+                }
+            });
+        }
+    
+        // Similar function for decrease_quantity if needed
+                function adjustQuantityDecrease(orderItemId, action) {
+                    $.ajax({
+                        type: 'POST',
+                        url: `{% url 'decreases_quantity' 0 %}`.replace('0', orderItemId),
+                        data: {
+                            'csrfmiddlewaretoken': '{{ csrf_token }}',
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                console.log('Quantity adjusted successfully!');
+                                // Perform any additional actions if needed
+                                // For example, you can update the displayed quantity on the page
+                            } else {
+                                console.error('Failed to adjust quantity.');
+                            }
+                        },
+                        error: function () {
+                            console.error('AJAX request failed.');
+                        }
+                    });
+                }
+            
+            
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

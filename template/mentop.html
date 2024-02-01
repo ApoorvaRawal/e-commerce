@@ -1,0 +1,61 @@
+<!-- mentop.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens Topwear</title>
+    <style>
+        .product{
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            float: left;
+            width: 200px;
+            margin-left: 40px;
+        }
+        .product img{
+            max-width: 100%;
+            height: 200px;
+        
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 2px rgb(20, 20, 20);
+            background-color: rgb(232, 219, 202);
+        }
+        #a{
+            text-decoration: none;
+            color: black;
+            width: 80px;
+            height: 40px;
+            border-radius: 2px;
+            box-shadow: 2px 2px 1px 2px rgb(20, 20, 20);
+            background-color: rgb(232, 219, 202);
+            
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mens Topwear</h1>
+
+<!-- Loop through the topwear queryset -->
+{% for topwear in topwear %}
+    <div class="product">
+        <a href="#"><img src="{{topwear.image.url}}" alt=""></a>
+        <h2>{{ topwear.name }}</h2>
+        <p>Category: {{ topwear.category }}</p>
+        <p>Price:{{ topwear.price }}</p>
+        <a href="{% url 'add_to_cart' id=topwear.id %}" id="a">Add to cart</a>
+        &nbsp;&nbsp;
+        <span> <a href="{% url 'buynow' id=topwear.id %}" id="a">Buy Now</a></span>
+    </div>
+{% endfor %}
+
+</body>
+</html>

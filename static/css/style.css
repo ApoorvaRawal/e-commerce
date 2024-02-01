@@ -1,0 +1,240 @@
+
+/*.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+}
+.hidden{
+    list-style: none;
+    font-size: 18px;
+}
+.menlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 150px;
+    background-color: chocolate;
+    border-left: -10px;
+    margin-top: -1030px;
+}
+.womenlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 150px;
+    background-color: rgb(200, 248, 6);
+    margin-left: 100px;
+    position: relative;
+    margin-top: -1030px;
+    
+}
+.kidlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 150px;
+    background-color: rgb(255, 228, 196);
+    margin-left: 220px;
+    position: relative;
+    margin-top: -1030px;
+            
+}
+.homelist{
+    border: 0px solid black;
+    width: 200px;
+    height: 160px;
+    background-color: rgb(255, 228, 196);
+    margin-left: 310px;
+    position: relative;
+    margin-top: -1030px;
+            
+}
+.skinlist{
+    border: 0px solid black;
+    width: 200px;
+    height: 160px;
+    background-color: rgb(255, 228, 196);
+    margin-left: 490px;
+    position: relative;
+    margin-top: -1030px;
+          
+}
+.eleclist{
+    border: 0px solid black;
+    width: 200px;
+    height: 160px;
+    background-color: rgb(255, 228, 196);
+    margin-left: 580px;
+    position: relative;
+    margin-top: -1030px;
+          
+}
+li:hover{
+  border-bottom: 2px solid black;
+}*/
+#search{
+      border-bottom: 0px solid black;
+    }
+#container{
+    border: 0px solid black;
+    height: 350px;
+    width: 1200px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 150px;
+    background-color:whitesmoke;
+      
+      
+}
+.img-fluid{
+  width: 500px;
+  height: 340px;
+  margin-bottom:1px ;
+}
+.col-md-6{
+  font-size: 45px;
+  font-weight: bolder;
+}
+.icon-with-text{
+    font-weight: lighter;
+    font-size: 15px;
+    display: inline-block;
+      
+}
+#ic{
+    width: 50px;
+    height: 50px;
+}
+#hr1{
+    margin-top: 450px;
+    width: 300px;
+    margin-left: 150px;
+    display: inline-block;
+}
+
+#span{
+    
+    font-size: 35px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    
+      
+}
+
+.maindiv{
+    border: 0px solid black;
+    height: 500px;
+    width: 1200px;
+    background-color:whitesmoke;
+    margin-top: -350px;
+    margin-left: 150px;
+    position: absolute;
+      
+}
+.div{
+    display:inline-block;
+}
+#women1 {
+  border: 0px solid black;
+  width: 410px;
+  height: 380px;
+  margin: 20px ;
+  margin-left: 10px;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  background-color:rgb(195, 195, 195);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+#women1 img {
+    width: 800px;
+    height: 130px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+#men1 {
+    border: 0px solid black;
+    width: 350px;
+    height: 320px;
+    margin: 20px ;
+    position: relative;
+    border-radius: 15px;
+    margin-top: -370px;
+    margin-left: 430px;
+    background-color:rgb(195, 195, 195);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+#men1 img {
+    width: 130px;
+    height:  100px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+#kid1 {
+    border: 0px solid black;
+    width: 350px;
+    height: 320px;
+    margin: 20px ;
+    position: relative;
+    border-radius: 15px;
+    margin-top: -370px;
+    margin-left: 805px;
+    background-color:rgb(195, 195, 195);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+#kid1 img {
+  width: 130px;
+  height:  100px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+
+/* Add these styles to your existing CSS */
+
+/* Adjusted styles for the menlist and other similar classes */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Full width */
+}
+
+.hidden {
+    list-style: none;
+    font-size: 18px;
+}
+
+.menlist,
+.womenlist,
+.kidlist,
+.homelist,
+.skinlist,
+.eleclist {
+    border: 1px solid black; /* Add a border for visibility */
+    width: 200px;
+    height: 150px;
+    background-color: transparent; /* Set your background color */
+    position: absolute; /* Position absolute for overlay effect */
+    top: 50px; /* Adjust as needed */
+    display: none; /* Hide by default */
+}
+
+.menlist {
+    left: 0;
+}
+
+.womenlist {
+    left: 200px; /* Adjust based on the width of menlist */
+}
+
+/* Add similar adjustments for kidlist, homelist, skinlist, and eleclist */
+
+/* Adjusted styles for the navigation links */
+.navbar-nav .nav-item {
+    position: relative; /* Position relative for stacking context */
+}
+
+/* Adjusted styles for the hovered state */
+.navbar-nav .nav-item:hover .hidden {
+    display: block; /* Show the corresponding list on hover */
+}
+
+/* Other styles remain unchanged */
+

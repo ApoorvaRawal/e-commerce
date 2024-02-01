@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/c.css' %}">
+
+</head>
+<body>
+  <!--Header-->
+  <header>
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{% static 'images/shop.png' %}" alt="" id="shop"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item" id="men">
+                <a class="nav-link" aria-current="page" href="#">MEN</a>
+              </li>
+              <li class="nav-item" id="women">
+                <a class="nav-link" href="#">WOMEN</a>
+              </li>
+              <li class="nav-item" id="kid">
+                <a class="nav-link" href="#">KIDS</a>
+              </li>
+              <li class="nav-item" id="home">
+                <a class="nav-link" href="#">HOME & KITCHEN</a>
+              </li>
+              <li class="nav-item" id="skin">
+                <a class="nav-link" href="#">BEAUTY</a>
+              </li>
+              <li class="nav-item" id="elec">
+                <a class="nav-link" href="#">ELECTRONICS</a>
+              </li>
+              <li class="nav-item" id="prof">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'showcart' %}">Cart</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>  
+    <!--end-hearder-->
+      <div class="container" id="container">
+        <div class="row">
+          <div class="col-md-6">
+            Lowest Prices <br>
+            Best Quality Shopping
+            <br><br>
+            <div class="icon-with-text">
+              <i class="fa fa-star"><img src="{% static 'images/truck.png' %}" alt="no image" id="ic"></i>
+              <span>Free Delivery</span>
+            </div>
+            
+            <div class="icon-with-text">
+              <i class="fa fa-heart"><img src="{% static 'images/cash.png' %}" alt="no img" id="ic"></i>
+              <span>Cash on Delivery</span>
+            </div>
+            
+            <div class="icon-with-text">
+              <i class="fa fa-globe"><img src="{% static 'images/easy.png' %}" alt="no img" id="ic"></i>
+              <span>Easy Return</span>
+            </div> 
+          </div>
+          <div class="col-md-6">
+            <img src="{% static 'images/diwali1.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+      </div>
+      </div>
+    
+
+      
+      
+      
+
+      <div class="line">
+      <hr class="border border-primary border-0 opacity-15" id="hr1">
+      <span id="span">Top Categories to choose from</span>
+        
+      </div>
+      
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="maindiv">
+        <br><br>
+        
+        <div class="container mt-5">
+          <div class="row image-container" id="women1">
+            <h1  text-align="center">Women's store</h1>
+            <div class="col-md-6">
+              <img src="{% static 'images/wcloth.jpg' %}" alt="Image 1" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'images/whandbag.jpg' %}" alt="Image 2" class="img-fluid">
+            </div>
+        
+        
+            <div class="col-md-6">
+              <img src="{% static 'images/wjewellery.jpg' %}" alt="Image 3" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'images/makeup.jpg' %}" alt="Image 4" class="img-fluid">
+            </div>
+          </div> 
+          
+        <div class="container mt-5">
+            <div class="row image-container" id="men1">
+              <h1  text-align="center">Men's store</h1>
+              <div class="col-md-6">
+                <img src="{% static 'images/mcloth.jpg' %}" alt="Image 1" class="img-fluid">
+              </div>
+              <div class="col-md-6">
+                <img src="{% static 'images/mengroom.jpg' %}" alt="Image 2" class="img-fluid">
+              </div>
+                  
+                  
+              <div class="col-md-6">
+                <img src="{% static 'images/watch.jpg' %}" alt="Image 3" class="img-fluid">
+              </div>
+              <div class="col-md-6">
+                <img src="{% static 'images/belt.jpg' %}" alt="Image 4" class="img-fluid">
+              </div>
+            </div>  
+          
+        </div>
+        <div class="container mt-5">
+          <div class="row image-container" id="kid1">
+            <h1  text-align="center">Kid's store</h1>
+            <div class="col-md-6">
+              <img src="{% static 'images/kidcloth.jpg' %}" alt="Image 1" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'images/toy.jpg' %}" alt="Image 2" class="img-fluid">
+            </div>
+                
+                
+            <div class="col-md-6">
+              <img src="{% static 'images/cycle.jpg' %}" alt="Image 3" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'images/bottle.webp' %}" alt="Image 4" class="img-fluid">
+            </div>
+          </div>  
+        
+      </div>
+      </div>
+
+
+      
+      
+      
+      
+            
+      
+            
+      
+      
+      
+      <!--lists-->
+      <div class="menlist">
+        <ul class="hidden">
+            <li> <a href="{% url 'mentop' %}">Topware</a></li>
+            <li> <a href="{% url 'menbott' %}">Bottomware</a></li>
+            <li><a href="{% url 'menfoot' %}">Footware</a></li>
+          
+        </ul>
+      </div>
+      <div class="womenlist">
+        <ul class="hidden">
+            <li> <a href="{% url 'womentop' %}">Topware</a></li>
+            <li> <a href="{% url 'womenbott' %}">Bottomware</a></li>
+            <li> <a href="{% url 'womenfoot' %}">Footware</a></li>
+            <li> <a href="{% url 'saree' %}">Saree</a></li>
+            
+        </ul>
+      </div>
+      <div class="kidlist">
+        <ul class="hidden">
+            <li> <a href="{% url 'softtoys' %}">SoftToys</a></li>
+            <li><a href="{% url 'kiddress' %}">Dresses</a></li>
+            <li><a href="{% url 'kidfoot' %}">Footware</a></li>
+            
+        </ul>
+      </div>
+      <div class="homelist">
+        <ul class="hidden">
+            <li> <a href="{% url 'stickers' %}">Stickers</a></li>
+            <li> <a href="{% url 'clocks' %}">Clocks</a></li>
+            <li> <a href="{% url 'showpiece' %}">showpiece</a></li>
+            <li> <a href="{% url 'kitchenstorage' %}">Kitchen storage</a></li>
+          
+        </ul>
+      </div>
+      <div class="skinlist">
+        <ul class="hidden">
+            <li> <a href="{% url 'makeup' %}">Makeup</a></li>
+            <li> <a href="{% url 'skincare' %}">Skincare,Bath</a></li>
+            <li> <a href="{% url 'haircare' %}">Haircare</a></li>
+            <li> <a href="{% url 'fragrance' %}">Fragrance</a></li>
+            
+        </ul>
+      </div>
+      <div class="eleclist">
+        <ul class="hidden">
+            <li> <a href="{% url 'mobile' %}">Mobile</a></li>
+            <li> <a href="{% url 'smartwatch' %}">SmartWatch</a></li>
+        </ul>
+      </div>
+      <div class="proflist">
+        <ul class="hidden">
+            <li><a href="{% url 'regi' %}">SIGN UP</a></li>
+            <li> <a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+        </ul>
+      </div>
+      <!--endlist-->
+            
+      
+      <!--JQuery-->
+      <script>
+        $(document).ready(function(){
+          $('.menlist').hide();
+          $("#men, .menlist").hover(function(){
+              $(".menlist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".menlist").hide();
+            },1500);
+          });  
+
+  
+          $('.womenlist').hide();
+          $("#women, .womenlist").hover(function(){
+              $(".womenlist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".womenlist").hide();
+            },1500);
+          });
+  
+          $('.kidlist').hide();
+          $("#kid, .kidlist").hover(function(){
+              $(".kidlist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".kidlist").hide();
+            },1500);
+          });
+  
+          $('.homelist').hide();
+          $("#home, .homelist").hover(function(){
+              $(".homelist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".homelist").hide();
+            },1500);
+          });
+  
+          $('.skinlist').hide();
+          $("#skin, .skinlist").hover(function(){
+              $(".skinlist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".skinlist").hide();
+            },1500);
+          });
+  
+          $('.eleclist').hide();
+          $("#elec, .eleclist").hover(function(){
+              $(".eleclist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".eleclist").hide();
+            },1500);
+          });
+  
+          $('.proflist').hide();
+          $("#prof, .proflist").hover(function(){
+              $(".proflist").show();
+          }, function(){
+            setTimeout(function(){
+              $(".proflist").hide();
+            },1500);
+          });
+      });
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </script>
+      <!--end jQuery-->
+</body>
+</html>
